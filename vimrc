@@ -14,6 +14,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'akhil/scala-vim-bundle'
 Bundle 'michalliu/jsruntime.vim'
+Bundle 'vim-scripts/taglist.vim'
 
 if executable('ctags')
     Bundle 'majutsushi/tagbar'
