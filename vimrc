@@ -11,12 +11,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'akhil/scala-vim-bundle'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'rosenfeld/conque-term'
 
 if executable('ctags')
+    Bundle 'Lokaltog/vim-powerline'
     Bundle 'majutsushi/tagbar'
 endif
 
@@ -46,3 +47,5 @@ function c:currentBuffer()
 endfunction
 
 command RunJs echo b:jsruntimeEvalScript(c:currentBuffer())
+command Shell :ConqueTerm bash
+
