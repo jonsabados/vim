@@ -11,10 +11,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'akhil/scala-vim-bundle'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'rosenfeld/conque-term'
+
 
 if executable('ctags')
     Bundle 'Lokaltog/vim-powerline'
@@ -36,6 +36,13 @@ set tabstop=4
 set number
 set mouse=a
 set laststatus=2
+set syntax=on
+set showmatch
+set autoindent
+set si
+
+filetype indent on
+filetype on
 
 let Tlist_WinWidth = 30
 
