@@ -1,4 +1,11 @@
 set nocompatible
+
+if has("gui_running")
+  set lines=999 columns=999
+endif
+
+colorscheme murphy 
+
 filetype off
 
 filetype plugin indent on
@@ -9,12 +16,11 @@ call vundle#rc()
 
 " vundle lives @ https://github.com/gmarik/vundle/
 Bundle 'gmarik/vundle'
-
 Bundle 'tpope/vim-fugitive'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'rosenfeld/conque-term'
-
+Bundle 'akhil/scala-vim-bundle'
 
 if executable('ctags')
     Bundle 'Lokaltog/vim-powerline'
@@ -44,15 +50,16 @@ set si
 filetype indent on
 filetype on
 
+set tags=~/.vim/ctags
+
+
 let Tlist_WinWidth = 30
 
 map <F4> :TlistToggle<cr>
-map <F8> :!ctags -R .<CR>
+map <F8> :!ctags -f ~/.vim/ctags -R <c-r>=getcwd()<cr><cr>
 
 function c:currentBuffer()
     return join(getline(1,'$'), "\n")
 endfunction
 
 command RunJs echo b:jsruntimeEvalScript(c:currentBuffer())
-command Shell :ConqueTerm bash
-
