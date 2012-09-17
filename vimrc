@@ -63,3 +63,5 @@ function c:currentBuffer()
 endfunction
 
 command RunJs echo b:jsruntimeEvalScript(c:currentBuffer())
+command Shell :ConqueTerm bash
+
