@@ -1,4 +1,7 @@
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
 
 if has("gui_running")
   set lines=999 columns=999
@@ -6,33 +9,32 @@ endif
 
 colorscheme murphy 
 
-filetype off
-
 filetype plugin indent on
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
 
 " vundle lives @ https://github.com/gmarik/vundle/
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'michalliu/jsruntime.vim'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'rosenfeld/conque-term'
-Bundle 'akhil/scala-vim-bundle'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'michalliu/jsruntime.vim'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'rosenfeld/conque-term'
+Plugin 'akhil/scala-vim-bundle'
 
 if executable('ctags')
-    Bundle 'Lokaltog/vim-powerline'
-    Bundle 'majutsushi/tagbar'
+    Plugin 'Lokaltog/vim-powerline'
+    Plugin 'majutsushi/tagbar'
 endif
+
+call vundle#end()
 
  " Bundle commands:
  "
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ " :PluginListt          - list configured bundles
+ " :PluginInstall   - install(update) bundles
+ " :PluginSearch foo - search(or refresh cache first) for foo
+ " :PluginClean      - confirm(or auto-approve) removal of unused bundles
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
